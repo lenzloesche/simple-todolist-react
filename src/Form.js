@@ -8,7 +8,7 @@ export default function Form() {
   function onSubmit(even) {
     even.preventDefault();
     const listItemValue = even.target[0].value;
-    const newArray = [...userContext.count, [listItemValue]];
+    const newArray = [...userContext.count, listItemValue];
     userContext.setCount(newArray);
     even.target.reset();
     even.target[0].focus();

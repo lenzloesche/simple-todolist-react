@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
 import { UserContext } from "./UserContext";
+
 export default function TodoListItem({ index, input, countindex }) {
   const userContext = useContext(UserContext);
   function doDelete(event) {
-    userContext.count.slice(countindex, 1);
-    userContext.setCount(userContext.count);
-    console.log(userContext);
+    let newVariable = userContext.count.slice();
+    newVariable.splice(newVariable.length - 1 - countindex, 1);
+    userContext.setCount(newVariable);
   }
 
   return (
